@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rudimentary CMS</title>
+</head>
+<body>
+    <h1>Create a New Entity</h1>
+    <form action="/entity" method="POST">
+        <label for="entityName">Entity Name:</label>
+        <input type="text" id="entityName" name="entityName" required><br><br>
+        <label for="attributes">Attributes (name:type, separated by commas):</label>
+        <input type="text" id="attributes" name="attributes" required><br><br>
+        <button type="submit">Create Entity</button>
+    </form>
+
+    <h1>CRUD Operations</h1>
+    <form action="/performCrud" method="POST">
+        <label for="entityName">Entity Name:</label>
+        <input type="text" id="entityName" name="entityName" required><br><br>
+        <label for="operation">Operation:</label>
+        <select id="operation" name="operation" required>
+            <option value="create">Create</option>
+            <option value="read">Read</option>
+            <option value="update">Update</option>
+            <option value="delete">Delete</option>
+        </select><br><br>
+        <label for="id">ID (for Update/Delete):</label>
+        <input type="text" id="id" name="id"><br><br>
+        <label for="data">Data (JSON format for Create/Update):</label>
+        <textarea id="data" name="data"></textarea><br><br>
+        <button type="submit">Perform Operation</button>
+    </form>
+</body>
+</html>
